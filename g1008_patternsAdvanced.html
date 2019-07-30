@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Patterns Avançados</title>
+</head>
+<body>
+    <h1>Patterns Avançados</h1>
+    Na vídeo aula vimos os exemplos mais comuns para ignorar arquivos em nosso repositório, porém o git permite que utilizamos patterns mais complexos, como podemos ver nos exemplos a seguir: <br>
+# - A cerquilha marca um comentário em nosso arquivo <br>
+- Ignora partes do nome de um pattern, agindo como um coringa <br>
+! - Permite que um determinado pattern seja excluído. Geralmente vem acompanhado de outra regra mais genérica <br>
+/ - Tem função diferente dependendo da sua localização. No início da linha, ignora um pattern somente naquele diretório, mas não em seus subdiretórios. No final ignora toda a árvore do diretório <br>
+\ - A barra invertida atua como um caractere de escape <br>
+** - Dois asteriscos em seguida são usados para ignorar um pattern específico dentro de uma árvore de diretórios <br>
+Para ficar mais claro, veja alguns exemplos: <br>
+Ignora todos os arquivos html do repositório
+<br>
+*.html
+
+<br>
+Exceto do arquivo index.html
+<br>
+!index.html
+<br>
+
+Ignora o README no diretório atual, mas permite subdir/README
+<br>
+/README
+
+<br>
+Ignora todos os arquivos no diretório build/
+<br>
+1-build/
+
+<br>
+Ignora os arquivos .txt do diretório doc/, mas permite subdiretórios (doc/server/arch.txt)
+<br>
+1 - doc/*.txt
+
+<br>
+Ignora todos arquivos .pdf na árvore doc/
+</body>
+</html>

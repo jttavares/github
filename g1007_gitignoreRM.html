@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gitignore e RM</title>
+</head>
+<body>
+    <h1>Utilizando o gitignore e git rm</h1>
+    <p>Para evitar bagunça com arquivos de configuração e módulos que não precisam ser versinados.</p>
+
+    <h3>Gitignore global</h3>
+    <p>Vc pode criar um arquivo para ignorar globalmente determinados arquivos independente do repositório que vc está trabalhando.</p>
+    <p>Para verificar se vc tem o gitignore global, verifique a pasta digitando no console.</p>
+    <textarea name="" readonly id="" cols="90" rows="1">
+            $ cd $HOME/.config/git
+    </textarea>
+    <p>Se houver, editar o arquivo, caso contrário pode criar e editar usando o vim</p>
+    <textarea name="" readonly id="" cols="90" rows="1">
+        vi gitignore
+    </textarea>
+    <p>Dentro do arquivo vc pode escrever o que ddeseja ignorar globalmente, vc pode consultar o repositorio do proprio GitHub que dá uma idéia do que ignorar em <a href="https://github.com/github/gitignore">https://github.com/github/gitignore</a></p>
+    <p>Nosso arquivo:</p>
+    <textarea name="" readonly id="" cols="90" rows="28">
+            # Windows thumbnail cache files
+            Thumbs.db
+            Thumbs.db:encryptable
+            ehthumbs.db
+            ehthumbs_vista.db
+            
+            # Dump file
+            *.stackdump
+            
+            # Folder config file
+            [Dd]esktop.ini
+            
+            # Recycle Bin used on file shares
+            $RECYCLE.BIN/
+            
+            # Windows Installer files
+            *.cab
+            *.msi
+            *.msix
+            *.msm
+            *.msp
+            
+            # Windows shortcuts
+            *.lnk
+            
+            .vscode 
+            node_modules
+    </textarea>
+<h3>Remover um arquivo específico</h3>
+<p>Usamos <strong>rm</strong> para remover um arquivo específico, citando o nome do arquivo que foi comitado por engano</p>
+<textarea name="" readonly id="" cols="90" rows="4">
+    git rm teste.txt
+    git status
+    git commit -m "removendo arquivo"
+    git push origin
+</textarea>
+
+</body>
+</html>
